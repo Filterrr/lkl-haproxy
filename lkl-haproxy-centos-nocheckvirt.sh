@@ -16,7 +16,7 @@ ${Green_font}
 ${Font_suffix}"
 
 check_system(){
-	[[ -z "`cat /etc/redhat-release | grep -iE "CentOS"`" ]] && echo -e "${Error} only support CentOS !\nYou can find debian script at https://github.com/mzz2017/lkl-haproxy" && exit 1
+	[[ -z "`cat /etc/redhat-release | grep -iE "CentOS"`" ]] && echo -e "${Error} only support CentOS !\nYou can find debian script at https://github.com/Filterrr/lkl-haproxy" && exit 1
 	[[ "`uname -m`" != "x86_64" ]] && echo -e "${Error} only support 64 bit !" && exit 1
 }
 
@@ -72,7 +72,7 @@ config(){
 	done
 
 	# download unfully-config-redirect
-	wget https://github.com/mzz2017/lkl-haproxy/raw/2020e4ab4e167d771fb3545dd094a471619978bc/requirement/redirect.sh
+	wget https://github.com/Filterrr/lkl-haproxy/raw/2020e4ab4e167d771fb3545dd094a471619978bc/requirement/redirect.sh
 
 	# config: haproxy && redirect
 	if [[ "${choose}" == "1" ]]; then
@@ -149,7 +149,7 @@ check-all(){
 	[[ ! -f redirect.sh ]] && echo -e "${Error} not found redirect config, please check !" && exit 1
 
 	# check lkl-mod
-	[[ ! -f liblkl-hijack.so ]] && wget https://github.com/mzz2017/lkl-haproxy/raw/2020e4ab4e167d771fb3545dd094a471619978bc/mod/liblkl-hijack.so
+	[[ ! -f liblkl-hijack.so ]] && wget https://github.com/Filterrr/lkl-haproxy/raw/2020e4ab4e167d771fb3545dd094a471619978bc/mod/liblkl-hijack.so
 	[[ ! -f liblkl-hijack.so ]] && echo -e "${Error} download lkl.mod failed, please check !" && exit 1
 
 	# check which
